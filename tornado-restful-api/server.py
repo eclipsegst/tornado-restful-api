@@ -27,6 +27,7 @@ define("mysql_password", default=CONFIG['database']['passwd'], help="db database
 define("mysql_database", default=CONFIG['database']['db'], help="db database name")
 define("mysql_idle_timeout_sec", default=CONFIG['database']['max_idle_time_sec'], help="max mysql connection idle timeout in sec")
 
+    
 def main():
     db = torndb.Connection("%s:%s" % (options.mysql_host, options.mysql_port),
         options.mysql_database, options.mysql_user, options.mysql_password,
@@ -37,7 +38,9 @@ def main():
     )
     http_server = tornado.httpserver.HTTPServer(
     Application(settings, db), xheaders=True)
+    
     http_server.listen(options.port)
+    print("start running on port " + options.port)
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":

@@ -1,7 +1,16 @@
 backports-abc==0.4
 backports.ssl-match-hostname==3.5.0.1
 certifi==2016.2.28
+fakeredis==0.7.0
+funcsigs==1.0.2
+mock==2.0.0
+mongomock==3.3.0
 MySQL-python==1.2.5
+pbr==1.9.1
+pymongo==3.2.2
+python-oauth2==1.0.0
+redis==2.10.5
+sentinels==0.0.6
 singledispatch==3.4.0.3
 six==1.10.0
 tornado==4.3
